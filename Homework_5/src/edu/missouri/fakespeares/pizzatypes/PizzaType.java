@@ -64,9 +64,9 @@ public enum PizzaType
 	}
 	
 	/**
-	 * Create a default pizza of that type.
+	 * Get the list of default toppings.
 	 * 
-	 * @return The generated {@code AbstractPizza}.
+	 * @return The list of default toppings..
 	 */
 	public List<Toppings> getDefaultToppings()
 	{

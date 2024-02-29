@@ -17,8 +17,6 @@ public class PizzaCookingFactory
 	 */
 	public AbstractPizza createPizza(PizzaType pizzaType)
 	{
-		// TODO
-		
-		return null;
+		return pizzaType.createPizza();
 	}
 }
