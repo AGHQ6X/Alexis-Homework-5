@@ -116,9 +116,25 @@ public abstract class AbstractPizza
 	@Override
 	public String toString()
 	{
-		// TODO
+		// Create string beginning
+		String str = "Pizza: #" + this.pizzaOrderID 
+				   + "\n\tPrice: $" + this.totalPrice 
+				   + "\n\tPrice Without Toppings: $" + String.format("%.2f", this.priceWithoutToppings)
+				   + "\n\tToppings: ";
+				   
+		// Loop through toppings
+		for (Toppings topping : this.toppingList)
+		{
+			// Add topping string
+			str += "\n\t\t" + topping.toString();
+		}
 		
-		return "";
+		// Finish string
+		str += "\n\tCooking Strategy: " + this.cookingStrategy
+			 + "\n\tCooking Price: $" + String.format("%.2f", this.cookingPrice);
+		
+		// Return the string
+		return str;
 	}
 	
 	/**
