@@ -1,5 +1,6 @@
 package edu.missouri.fakespeares.pizzatypes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.missouri.fakespeares.cookingstrategy.ICookingStrategy;
@@ -9,7 +10,7 @@ public abstract class AbstractPizza
 	/**
 	 * Counts the number of pizzas in order to give every pizza a unique ID.
 	 */
-	static int orderIDCounter = 0;
+	protected static int orderIDCounter = 0;
 	
 	/**
 	 * A unique ID for every individual pizza order.
@@ -46,7 +47,21 @@ public abstract class AbstractPizza
 	 */
 	AbstractPizza(double priceWithoutToppings)
 	{
-		// TODO
+		// Set the ID and increment counter
+		this.pizzaOrderID = AbstractPizza.orderIDCounter++;
+		
+		// Create an empty topping list
+		this.toppingList = new ArrayList<Toppings>();
+		
+		// Set the price before toppings
+		this.priceWithoutToppings = priceWithoutToppings;
+		
+		// Set the cooking strategy information
+		this.cookingStrategy = null;
+		this.cookingPrice = 0.0;
+		
+		// Calculate the total price
+		this.totalPrice = this.addTopingsToPrice(priceWithoutToppings);
 	}
 	
 	/**
@@ -56,7 +71,21 @@ public abstract class AbstractPizza
 	 */
 	AbstractPizza(AbstractPizza pizza)
 	{
-		// TODO
+		// Set the ID and increment counter
+		this.pizzaOrderID = AbstractPizza.orderIDCounter++;
+				
+		// Create a copy of the pizza topping list
+		this.toppingList = new ArrayList<Toppings>(pizza.toppingList);
+				
+		// Set the price before toppings
+		this.priceWithoutToppings = pizza.priceWithoutToppings;
+
+		// Set the cooking strategy information
+		this.cookingStrategy = pizza.cookingStrategy;
+		this.cookingPrice = pizza.cookingPrice;
+
+		// Calculate the total price
+		this.totalPrice = pizza.totalPrice;
 	}
 	
 	/**
