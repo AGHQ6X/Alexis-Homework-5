@@ -215,9 +215,11 @@ public abstract class AbstractPizza
 	 */
 	public void setCookingStrategy(ICookingStrategy cookingStrategy)
 	{
-		// TODO
-		
+		// Set the cooking strategy
 		this.cookingStrategy = cookingStrategy;
+		
+		// Set the cooking price
+		this.cookingPrice = cookingStrategy.getAdditionalPrice();
 	}
 
 	/**

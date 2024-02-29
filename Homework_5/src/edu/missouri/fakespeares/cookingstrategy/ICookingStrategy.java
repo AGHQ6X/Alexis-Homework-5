@@ -11,4 +11,11 @@ public interface ICookingStrategy
 	 * @return Returns false if the pizza is already "cooked."
 	 */
 	public boolean cook(AbstractPizza pizza);
+	
+	/**
+	 * Get the price that the strategy adds to the price.
+	 * 
+	 * @return The price that the strategy adds to the price.
+	 */
+	public double getAdditionalPrice();
 }

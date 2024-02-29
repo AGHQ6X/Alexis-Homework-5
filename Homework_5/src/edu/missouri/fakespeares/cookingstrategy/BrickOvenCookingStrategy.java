@@ -12,4 +12,9 @@ public class BrickOvenCookingStrategy implements ICookingStrategy
 		return false;
 	}
 
+	@Override
+	public double getAdditionalPrice()
+	{
+		return CookingStyleType.BRICK_OVEN.getAdditionalPrice();
+	}
 }

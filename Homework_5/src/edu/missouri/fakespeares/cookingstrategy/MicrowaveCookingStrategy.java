@@ -12,4 +12,9 @@ public class MicrowaveCookingStrategy implements ICookingStrategy
 		return false;
 	}
 
+	@Override
+	public double getAdditionalPrice()
+	{
+		return CookingStyleType.MICROWAVE.getAdditionalPrice();
+	}
 }
