@@ -173,9 +173,9 @@ public abstract class AbstractPizza
 	 */
 	public void setToppingList(List<Toppings> toppingList)
 	{
-		// TODO
-		
 		this.toppingList = toppingList;
+		
+		this.updatePizzaPrice();
 	}
 
 	/**
@@ -201,7 +201,7 @@ public abstract class AbstractPizza
 	/**
 	 * Get the method of cooking for the pizza.
 	 * 
-	 * @return
+	 * @return The method of cooking the pizza.
 	 */
 	public ICookingStrategy getCookingStrategy()
 	{
