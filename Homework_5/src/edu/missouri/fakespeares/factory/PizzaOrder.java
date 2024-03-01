@@ -1,5 +1,6 @@
 package edu.missouri.fakespeares.factory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.missouri.fakespeares.cookingstrategy.CookingStyleType;
@@ -30,28 +31,56 @@ public class PizzaOrder
 	 */
 	public PizzaOrder()
 	{
-		// TODO
+		// Initialize the pizza factory
+		this.pizzaFactory = new PizzaCookingFactory();
+		
+		// Set the cooking strategy to blank
+		this.cookingStrategy = null;
+		
+		// Set up an empty pizza list
+		this.pizzaOrderList = new ArrayList<AbstractPizza>();
 	}
 	
 	/** 
-	 * This method gets the pizza order with the given pizza order ID and prints 
-	 * the toppings of that order.
+	 * This method gets the pizza order with the given pizza order ID and 
+	 * prints the toppings of that order.
 	 * 
 	 * @param orderID The ID of the pizza to print.
 	 */
 	public void printListOfToppingsByPizzaOrderID(int orderID)
 	{
-		// TODO
+		// Get the pizza
+		AbstractPizza pizza = this.getPizzaByOrderID(orderID);
+		
+		// Check if pizza was found
+		if (pizza != null)
+		{
+			// If the pizza is found, print a message
+			System.out.println("Pizza #" + orderID + " has toppings:");
+
+			// Loop through toppings
+			for (Toppings topping : pizza.getToppingList())
+			{
+				// Print the topping
+				System.out.println("\t" + topping.toString());
+			}
+			
+		}
 	}
 	
 	/**
 	 * This method prints the pizzas in the {@code pizzaOrderList}.
 	 * 
-	 * @param orderID The ID of the pizza to print.
+	 * @param orderID Nothing, I guess?
 	 */
 	public void printPizzaOrderCart(int orderID)
 	{
-		// TODO
+		// Loop through pizzas
+		for (AbstractPizza pizza : this.pizzaOrderList)
+		{
+			// Print the pizza
+			System.out.println(pizza.toString());
+		}
 	}
 	
 	/**
@@ -63,8 +92,18 @@ public class PizzaOrder
 	 */
 	public AbstractPizza getPizzaByOrderID(int orderID)
 	{
-		// TODO
+		// Loop through pizzas
+		for (AbstractPizza pizza : this.pizzaOrderList)
+		{
+			// Check if the pizza has an ID that matches
+			if (pizza.getPizzaOrderID() == orderID)
+			{
+				// If the pizza is found, return the pizza
+				return pizza;
+			}
+		}
 		
+		// If it got to here, no pizza was found
 		return null;
 	}
 	
@@ -131,6 +170,7 @@ public class PizzaOrder
 	{
 		// TODO
 		
+		// If it got to here, all pizzas are cooked
 		return false;
 	}
 	
@@ -163,8 +203,23 @@ public class PizzaOrder
 	public boolean selectCookingStrategyByPizzaOrderID(int orderID, 
 			CookingStyleType cookingStrategyType)
 	{
-		// TODO
+		// Initialize strategy
+		this.cookingStrategy = cookingStrategyType.getStrategyClass();
 		
-		return false;
+		// Get the pizza
+		AbstractPizza pizza = this.getPizzaByOrderID(orderID);
+		
+		// Check if the pizza was found
+		if (pizza == null)
+		{
+			// If the pizza was not found, return failure
+			return false;
+		}
+		
+		// Set the cooking strategy
+		pizza.setCookingStrategy(cookingStrategy);
+		
+		// If it got to here, the pizza was found
+		return true;
 	}
 }

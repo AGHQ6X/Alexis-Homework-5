@@ -2,15 +2,14 @@ package edu.missouri.fakespeares.cookingstrategy;
 
 public enum CookingStyleType
 {
-	MICROWAVE(MicrowaveCookingStrategy.class, 1.00),
-	CONVENTIONAL_OVEN(ConventionalOvenCookingStrategy.class, 8.00),
-	BRICK_OVEN(BrickOvenCookingStrategy.class, 10.00);
+	MICROWAVE(new MicrowaveCookingStrategy(), 1.00),
+	CONVENTIONAL_OVEN(new ConventionalOvenCookingStrategy(), 8.00),
+	BRICK_OVEN(new BrickOvenCookingStrategy(), 10.00);
 	
 	/**
 	 * The strategy class associated with the style type.
 	 */
-	@SuppressWarnings("rawtypes")
-	private Class strategy;
+	private ICookingStrategy strategy;
 	
 	/**
 	 * The additional price that the cooking style adds to the pizza.
@@ -23,7 +22,7 @@ public enum CookingStyleType
 	 * 
 	 * @param strategy The strategy class to store.
 	 */
-	private CookingStyleType(@SuppressWarnings("rawtypes") Class strategy, 
+	private CookingStyleType(ICookingStrategy strategy, 
 							 double additionalPrice)
 	{
 		this.strategy = strategy;
@@ -34,7 +33,7 @@ public enum CookingStyleType
 	 * 
 	 * @return The strategy class of the cooking style.
 	 */
-	public @SuppressWarnings("rawtypes") Class getStrategyClass()
+	public ICookingStrategy getStrategyClass()
 	{
 		return this.strategy;
 	}
