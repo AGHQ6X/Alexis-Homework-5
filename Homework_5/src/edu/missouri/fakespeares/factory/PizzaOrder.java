@@ -69,8 +69,8 @@ public class PizzaOrder
 	}
 	
 	/**
-	 * This method creates a new pizza with the given {@code PizzaType} and adds 
-	 * it to the {@code pizzaOrderList}.
+	 * This method creates a new pizza with the given {@code PizzaType} and 
+	 * adds it to the {@code pizzaOrderList}.
 	 * 
 	 * @param pizzaType The type of pizza to add to cart.
 	 * @return Whether the pizza was successfully added to cart.
@@ -86,8 +86,8 @@ public class PizzaOrder
 	 * This method finds the pizza order with the given ID and adds the given 
 	 * topping to its topping list if it doesn’t already exist in the list. If 
 	 * the given topping is added, it also updates the pizza price and returns 
-	 * true. If the topping already exists in the topping list of the pizza, it 
-	 * returns false.
+	 * {@code true}. If the topping already exists in the topping list of the 
+	 * pizza, it returns {@code false}.
 	 * 
 	 * @param orderID The pizza to add the topping to.
 	 * @param topping The type of topping to add to the pizza.
@@ -104,8 +104,8 @@ public class PizzaOrder
 	 * This method finds the pizza order with the given ID and removes the 
 	 * given topping from its topping list if it exists in the list. If the 
 	 * given topping is removed, it also updates the pizza price and returns 
-	 * true. If the topping doesn’t exist in the topping list of the pizza and 
-	 * cannot be removed, it returns false.
+	 * {@code true}. If the topping doesn’t exist in the topping list of the 
+	 * pizza and cannot be removed, it returns {@code false}.
 	 * 
 	 * @param orderID The pizza to remove the topping from.
 	 * @param topping The type of topping to remove from the pizza.
@@ -120,9 +120,10 @@ public class PizzaOrder
 	
 	/**
 	 * This method checks the pizzas in the {@code pizzaOrderList} and checks 
-	 * their cooking strategies. It returns true if there are any pizzas 
-	 * without any assigned pizza cooking strategy. It returns false if there 
-	 * are no pizzas without an assigned cooking strategy.
+	 * their cooking strategies. It returns {@code true} if there are any 
+	 * pizzas without any assigned pizza cooking strategy. It returns 
+	 * {@code false} if there are no pizzas without an assigned cooking 
+	 * strategy.
 	 * 
 	 * @return Whether there are any uncooked pizza.
 	 */
@@ -151,9 +152,9 @@ public class PizzaOrder
 	
 	/**
 	 * This method gets the pizza with the given order ID, instantiates the 
-	 * cookingStrategy according to the cookingStrategyType parameter. Calls 
-	 * the cook function for the pizza of the pizza order with the given order 
-	 * ID.
+	 * {@code cookingStrategy} according to the {@code cookingStrategyType} 
+	 * parameter. Calls the cook function for the pizza of the pizza order with 
+	 * the given order ID.
 	 * 
 	 * @param orderID The ID of the pizza to cook.
 	 * @param cookingStrategyType The style of cooking to cook the pizza with.

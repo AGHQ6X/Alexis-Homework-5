@@ -89,11 +89,12 @@ public abstract class AbstractPizza
 	}
 	
 	/**
-	 * Calculates the total price of the pizza using priceWithoutToppings and 
-	 * the prices of each topping in the toppingsList. It also assigns 
-	 * totalPrice attribute to the calculated total price, and 
-	 * priceWithoutToppings attribute to the passed parameter. This could be 
-	 * called once to add the default toppings.
+	 * Calculates the total price of the pizza using 
+	 * {@code priceWithoutToppings} and the prices of each topping in the 
+	 * {@code toppingsList}. It also assigns {@code totalPrice} attribute to 
+	 * the calculated total price, and {@code priceWithoutToppings} attribute 
+	 * to the passed parameter. This could be called once to add the default 
+	 * toppings.
 	 * 
 	 * @param priceWithoutToppings Price without toppings to set the price to.
 	 * @return Total price after adding price of toppings.
@@ -101,10 +102,10 @@ public abstract class AbstractPizza
 	protected abstract double addTopingsToPrice(double priceWithoutToppings);
 	
 	/**
-	 * Calculates and updates the totalPrice of the pizza using 
-	 * priceWithoutToppings attribute and the prices of each topping in the 
-	 * toppingsList. You can use this method on each update you make with the 
-	 * pizza.
+	 * Calculates and updates the {@code totalPrice} of the pizza using 
+	 * {@code priceWithoutToppings} attribute and the prices of each topping in 
+	 * the {@code toppingsList}. You can use this method on each update you 
+	 * make with the pizza.
 	 * 
 	 * @return Total price after update.
 	 */
@@ -176,6 +177,34 @@ public abstract class AbstractPizza
 		this.toppingList = toppingList;
 		
 		this.updatePizzaPrice();
+	}
+	
+	/**
+	 * Add a new topping to the list if it did not already exist. If the 
+	 * topping was added, return {@code true} If the topping already exists, 
+	 * return {@code false}.
+	 * 
+	 * @return Whether the topping was added.
+	 */
+	public boolean addNewTopping(Toppings topping)
+	{
+		// TODO
+		
+		return false;
+	}
+	
+	/**
+	 * Removes a topping from the list if it is on the pizza. If the topping 
+	 * was removed, return {@code true}. If the topping did not exist, return 
+	 * {@code false}.
+	 * 
+	 * @return Whether the topping was removed.
+	 */
+	public boolean removeTopping(Toppings topping)
+	{
+		// TODO
+		
+		return false;
 	}
 
 	/**

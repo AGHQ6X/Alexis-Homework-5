@@ -66,7 +66,7 @@ public enum PizzaType
 	/**
 	 * Get the list of default toppings.
 	 * 
-	 * @return The list of default toppings..
+	 * @return The list of default toppings.
 	 */
 	public List<Toppings> getDefaultToppings()
 	{
