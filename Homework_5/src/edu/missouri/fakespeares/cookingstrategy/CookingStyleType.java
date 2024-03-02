@@ -26,6 +26,7 @@ public enum CookingStyleType
 							 double additionalPrice)
 	{
 		this.strategy = strategy;
+		this.additionalPrice = additionalPrice;
 	}
 	
 	/**

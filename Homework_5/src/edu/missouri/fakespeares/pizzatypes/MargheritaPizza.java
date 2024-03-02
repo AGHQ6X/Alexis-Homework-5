@@ -42,7 +42,7 @@ public class MargheritaPizza extends AbstractPizza
 		}
 
 		// Counter for the price
-		double price = 0.0;
+		double price = PizzaType.MARGHERITA.getPriceWithoutToppings();
 
 		// Loop through the toppings
 		for (Toppings topping : this.toppingList)

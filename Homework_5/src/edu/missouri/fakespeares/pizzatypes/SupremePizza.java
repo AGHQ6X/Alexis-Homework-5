@@ -42,7 +42,7 @@ public class SupremePizza extends AbstractPizza
 		}
 
 		// Counter for the price
-		double price = 0.0;
+		double price = PizzaType.SUPREME.getPriceWithoutToppings();
 
 		// Loop through the toppings
 		for (Toppings topping : this.toppingList)

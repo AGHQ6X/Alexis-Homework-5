@@ -6,16 +6,19 @@ import java.util.function.Supplier;
 
 public enum PizzaType
 {
-	HAWAIIAN(() -> { return new HawaiianPizza(); }, 
+	HAWAIIAN(3.0,
+			() -> { return new HawaiianPizza(); }, 
 			Arrays.asList(
 					Toppings.CANADIAN_BACON, 
 					Toppings.CHEESE, 
 					Toppings.PINEAPPLE)),
-	MARGHERITA(() -> { return new MargheritaPizza(); }, 
+	MARGHERITA(2.5,
+			() -> { return new MargheritaPizza(); }, 
 			Arrays.asList(
 					Toppings.TOMATO, 
 					Toppings.CHEESE)),
-	SUPREME(() -> { return new SupremePizza(); }, 
+	SUPREME(3.5,
+			() -> { return new SupremePizza(); }, 
 			Arrays.asList(
 					Toppings.TOMATO, 
 					Toppings.CHEESE, 
@@ -24,13 +27,19 @@ public enum PizzaType
 					Toppings.PEPPERONI,
 					Toppings.BLACK_OLIVE,
 					Toppings.MUSHROOM)),
-	VEGETARIAN(() -> { return new VegetarianPizza(); }, 
+	VEGETARIAN(1.5,
+			() -> { return new VegetarianPizza(); }, 
 			Arrays.asList(
 					Toppings.TOMATO, 
 					Toppings.CHEESE, 
 					Toppings.BELL_PEPPER,
 					Toppings.BLACK_OLIVE,
 					Toppings.MUSHROOM));
+	
+	/**
+	 * The price before adding any toppings.
+	 */
+	private double priceWithoutToppings;
 	
 	/**
 	 * A supplier that returns a new {@code AbstractPizza} object.
@@ -47,9 +56,11 @@ public enum PizzaType
 	 * 
 	 * @param createPizza The {@code Supplier} to store .
 	 */
-	private PizzaType(Supplier<AbstractPizza> supplier, 
+	private PizzaType(double priceWithoutToppings,
+			Supplier<AbstractPizza> supplier, 
 			List<Toppings> defaultToppings)
 	{
+		this.priceWithoutToppings = priceWithoutToppings;
 		this.supplier = supplier;
 		this.defaultToppings = defaultToppings;
 	}
@@ -62,6 +73,16 @@ public enum PizzaType
 	public AbstractPizza createPizza()
 	{
 		return supplier.get();
+	}
+	
+	/**
+	 * Get the price before adding any toppings.
+	 * 
+	 * @return The price before adding any toppings.
+	 */
+	public double getPriceWithoutToppings()
+	{
+		return this.priceWithoutToppings;
 	}
 	
 	/**

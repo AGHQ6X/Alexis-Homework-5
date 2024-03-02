@@ -273,6 +273,9 @@ public abstract class AbstractPizza
 		
 		// Set the cooking price
 		this.cookingPrice = cookingStrategy.getAdditionalPrice();
+		
+		// Update the price
+		this.updatePizzaPrice();
 	}
 
 	/**
