@@ -188,9 +188,21 @@ public abstract class AbstractPizza
 	 */
 	public boolean addNewTopping(Toppings topping)
 	{
-		// TODO
+		// Check if the topping is already on the list
+		if (this.toppingList.contains(topping))
+		{
+			// If the topping was on the list, return failure
+			return false;
+		}
 		
-		return false;
+		// Add the topping
+		this.toppingList.add(topping);
+		
+		// Update price
+		this.updatePizzaPrice();
+		
+		// If it got to here, the adding was successful
+		return true;
 	}
 	
 	/**
@@ -202,9 +214,21 @@ public abstract class AbstractPizza
 	 */
 	public boolean removeTopping(Toppings topping)
 	{
-		// TODO
+		// Check if the topping is already on the list
+		if (this.toppingList.contains(topping) == false)
+		{
+			// If the topping wasn't on the list, return failure
+			return false;
+		}
+
+		// Remove the topping
+		this.toppingList.remove(topping);
 		
-		return false;
+		// Update price
+		this.updatePizzaPrice();
+
+		// If it got to here, the subtracting was successful
+		return true;
 	}
 
 	/**
@@ -284,8 +308,8 @@ public abstract class AbstractPizza
 	/**
 	 * Calculates the total price from the sum of its parts
 	 */
-	public void setTotalPrice()
+	public void setTotalPrice(double totalPrice)
 	{
-		this.updatePizzaPrice();
+		this.totalPrice = totalPrice;
 	}
 }
