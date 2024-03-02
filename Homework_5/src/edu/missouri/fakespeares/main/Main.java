@@ -36,7 +36,10 @@ public class Main
 		order.selectCookingStrategyByPizzaOrderID(3, CookingStyleType.CONVENTIONAL_OVEN);
 		
 		// Print all pizzas
-		order.printPizzaOrderCart(0);
+		for (int i = 0; i < 4; i++)
+		{
+			order.printPizzaOrderCart(i);
+		}
 		
 		// Attempt to checkout
 		try 

@@ -51,6 +51,7 @@ public enum PizzaType
 			List<Toppings> defaultToppings)
 	{
 		this.supplier = supplier;
+		this.defaultToppings = defaultToppings;
 	}
 	
 	/**

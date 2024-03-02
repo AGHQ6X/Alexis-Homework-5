@@ -118,8 +118,8 @@ public abstract class AbstractPizza
 	public String toString()
 	{
 		// Create string beginning
-		String str = "Pizza: #" + this.pizzaOrderID 
-				   + "\n\tPrice: $" + this.totalPrice 
+		String str = "Pizza: #" + this.pizzaOrderID
+				   + "\n\tPrice: $" + String.format("%.2f", this.totalPrice)
 				   + "\n\tPrice Without Toppings: $" + String.format("%.2f", this.priceWithoutToppings)
 				   + "\n\tToppings: ";
 				   
@@ -131,7 +131,7 @@ public abstract class AbstractPizza
 		}
 		
 		// Finish string
-		str += "\n\tCooking Strategy: " + this.cookingStrategy
+		str += "\n\tCooking Strategy: " + this.cookingStrategy.getClass().getSimpleName()
 			 + "\n\tCooking Price: $" + String.format("%.2f", this.cookingPrice);
 		
 		// Return the string
