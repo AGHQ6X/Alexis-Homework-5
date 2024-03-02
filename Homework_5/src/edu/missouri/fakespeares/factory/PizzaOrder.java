@@ -141,9 +141,18 @@ public class PizzaOrder
 	 */
 	public boolean addNewToppingToPizza(int orderID, Toppings topping)
 	{
-		// TODO
+		// Get the pizza
+		AbstractPizza pizza = this.getPizzaByOrderID(orderID);
 		
-		return false;
+		// Check if the pizza could be found
+		if (pizza == null)
+		{
+			// If the pizza was not found, return failure
+			return false;
+		}
+		
+		// Add new topping and return result of method
+		return pizza.addNewTopping(topping);
 	}
 	
 	/**
@@ -159,9 +168,18 @@ public class PizzaOrder
 	 */
 	public boolean removeToppingFromPizza(int orderID, Toppings topping)
 	{
-		// TODO
-		
-		return false;
+		// Get the pizza
+		AbstractPizza pizza = this.getPizzaByOrderID(orderID);
+
+		// Check if the pizza could be found
+		if (pizza == null)
+		{
+			// If the pizza was not found, return failure
+			return false;
+		}
+
+		// Remove topping and return result of method
+		return pizza.removeTopping(topping);
 	}
 	
 	/**
