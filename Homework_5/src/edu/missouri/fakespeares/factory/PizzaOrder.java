@@ -118,9 +118,14 @@ public class PizzaOrder
 	 */
 	public boolean addPizzaToCart(PizzaType pizzaType)
 	{
-		// TODO
+		// Use the factory to create a new pizza
+		AbstractPizza newPizza = this.pizzaFactory.createPizza(pizzaType);
 		
-		return false;
+		// Add the new pizza
+		this.pizzaOrderList.add(newPizza);
+		
+		// Return success
+		return newPizza != null;
 	}
 	
 	/**
