@@ -193,7 +193,16 @@ public class PizzaOrder
 	 */
 	public boolean isThereAnyUncookedPizza()
 	{
-		// TODO
+		// Loop through pizzas
+		for (AbstractPizza pizza : this.pizzaOrderList)
+		{
+			// Check if the pizza has been cooked
+			if (pizza.getCookingStrategy() == null)
+			{
+				// A pizza was found uncooked
+				return true;
+			}
+		}
 		
 		// If it got to here, all pizzas are cooked
 		return false;
