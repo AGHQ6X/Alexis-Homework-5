@@ -64,21 +64,23 @@ public class PizzaOrder
 				// Print the topping
 				System.out.println("\t" + topping.toString());
 			}
-			
 		}
 	}
 	
 	/**
 	 * This method prints the pizzas in the {@code pizzaOrderList}.
 	 * 
-	 * @param orderID Nothing, I guess?
+	 * @param orderID The ID of the pizza to print.
 	 */
 	public void printPizzaOrderCart(int orderID)
 	{
-		// Loop through pizzas
-		for (AbstractPizza pizza : this.pizzaOrderList)
+		// Get the pizza
+		AbstractPizza pizza = this.getPizzaByOrderID(orderID);
+
+		// Check if pizza was found
+		if (pizza != null)
 		{
-			// Print the pizza
+			// If the pizza is found, print a message
 			System.out.println(pizza.toString());
 		}
 	}
