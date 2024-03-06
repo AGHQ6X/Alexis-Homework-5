@@ -250,8 +250,8 @@ public class PizzaOrder
 			return false;
 		}
 		
-		// Set the cooking strategy
-		pizza.setCookingStrategy(cookingStrategy);
+		// Cook the pizza
+		cookingStrategy.cook(pizza);
 		
 		// If it got to here, the pizza was found
 		return true;

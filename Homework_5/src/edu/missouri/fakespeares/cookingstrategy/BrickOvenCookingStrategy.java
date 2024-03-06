@@ -7,9 +7,18 @@ public class BrickOvenCookingStrategy implements ICookingStrategy
 	@Override
 	public boolean cook(AbstractPizza pizza)
 	{
-		// TODO 
+		// Check if the pizza is cooked
+		if (pizza.getCookingStrategy() != null)
+		{
+			// If the pizza is already cooked, cooking failed
+			return false;
+		}
 		
-		return false;
+		// Set the cooking strategy
+		pizza.setCookingStrategy(this);
+		
+		// If it got to here, cooking succeeded
+		return true;
 	}
 
 	@Override
