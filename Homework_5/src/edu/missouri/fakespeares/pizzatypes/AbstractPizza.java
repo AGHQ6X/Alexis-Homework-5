@@ -33,7 +33,7 @@ public abstract class AbstractPizza
 	protected ICookingStrategy cookingStrategy;
 	
 	/**
-	 * The price associated with the method of cooking the pizza
+	 * The price associated with the method of cooking the pizza.
 	 */
 	protected double cookingPrice;
 	
@@ -111,9 +111,6 @@ public abstract class AbstractPizza
 	 */
 	public abstract double updatePizzaPrice();
 	
-	/**
-	 * Displays all field information for the pizza.
-	 */
 	@Override
 	public String toString()
 	{
@@ -141,18 +138,36 @@ public abstract class AbstractPizza
 	/**
 	 * Gets the unique ID associated with this pizza.
 	 * 
-	 * @return
+	 * @return The unique ID associated with this pizza.
 	 */
 	public int getPizzaOrderID()
 	{
+		// Return the ID
 		return this.pizzaOrderID;
+	}
+	
+	/**
+	 * Sets the unique ID associated with this pizza.
+	 * 
+	 * @param pizzaOrderID The unique ID associated with this pizza.
+	 */
+	public void setPizzaOrderID(int pizzaOrderID)
+	{
+		// Set pizza order ID
+		this.pizzaOrderID = pizzaOrderID;
 	}
 
 	/**
 	 * Assigns a new unique ID to the pizza.
+	 * 
+	 * @return The new ID generated for the pizza.
 	 */
-	public int setPizzaOrderID()
+	public int newPizzaOrderID()
 	{
+		// Set a new ID
+		this.pizzaOrderID = AbstractPizza.orderIDCounter++;
+		
+		//Return the ID
 		return this.pizzaOrderID;
 	}
 
@@ -163,6 +178,7 @@ public abstract class AbstractPizza
 	 */
 	public List<Toppings> getToppingList()
 	{
+		// Return topping list
 		return this.toppingList;
 	}
 
@@ -174,8 +190,10 @@ public abstract class AbstractPizza
 	 */
 	public void setToppingList(List<Toppings> toppingList)
 	{
+		// Set the topping list
 		this.toppingList = toppingList;
 		
+		// Update the price for the new topping list
 		this.updatePizzaPrice();
 	}
 	
@@ -238,6 +256,7 @@ public abstract class AbstractPizza
 	 */
 	public double getPriceWithoutToppings()
 	{
+		// Return price
 		return this.priceWithoutToppings;
 	}
 
@@ -248,6 +267,7 @@ public abstract class AbstractPizza
 	 */
 	public void setPriceWithoutToppings(double priceWithoutToppings)
 	{
+		// Set price
 		this.priceWithoutToppings = priceWithoutToppings;
 	}
 
@@ -258,6 +278,7 @@ public abstract class AbstractPizza
 	 */
 	public ICookingStrategy getCookingStrategy()
 	{
+		// Return strategy
 		return this.cookingStrategy;
 	}
 
@@ -285,16 +306,18 @@ public abstract class AbstractPizza
 	 */
 	public double getCookingPrice()
 	{
+		// Return cooking price
 		return this.cookingPrice;
 	}
 
 	/**
 	 * Set the price addition associated with the way the pizza was cooked.
 	 * 
-	 * @param cookingPrice
+	 * @param cookingPrice The price addition from the cooking method.
 	 */
 	public void setCookingPrice(double cookingPrice)
 	{
+		// Set cooking price
 		this.cookingPrice = cookingPrice;
 	}
 	
@@ -305,14 +328,18 @@ public abstract class AbstractPizza
 	 */
 	public double getTotalPrice()
 	{
+		// Return total price
 		return this.totalPrice;
 	}
 
 	/**
-	 * Calculates the total price from the sum of its parts
+	 * Calculates the total price from the sum of its parts.
+	 * 
+	 * @param totalPrice The new total price from the sum of its parts.
 	 */
 	public void setTotalPrice(double totalPrice)
 	{
+		// Set total price
 		this.totalPrice = totalPrice;
 	}
 }
