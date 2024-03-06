@@ -38,18 +38,27 @@ public class Main
 		// Print all pizzas
 		for (int i = 0; i < 4; i++)
 		{
+			// Print pizza
 			order.printPizzaOrderCart(i);
 		}
+		
+		// Create a checkout total price variable
+		double total = 0.0;
 		
 		// Attempt to checkout
 		try 
 		{
-			order.checkout();
+			// Checkout
+			total = order.checkout();
 		}
 		catch (Exception e)
 		{
+			// If an exception is thrown, 
 			System.out.println("Exception thrown: " + e.toString());
 		}
+		
+		// Print the total
+		System.out.println("Total Price: " + String.format("$%.2f", total));
 	}
 
 }

@@ -221,7 +221,25 @@ public class PizzaOrder
 	 */
 	public double checkout() throws Exception
 	{
-		return 0.0;
+		// Check if the pizza is cooked
+		if (this.isThereAnyUncookedPizza())
+		{
+			// Throw a generic Exception
+			throw new Exception("A pizza was uncooked!");
+		}
+		
+		// Create a price counter
+		double total = 0.0;
+		
+		// Loop through pizzas
+		for (AbstractPizza pizza : this.pizzaOrderList)
+		{
+			// Add to the total
+			total += pizza.getTotalPrice();
+		}
+		
+		// Return the total
+		return total;
 	}
 	
 	/**
