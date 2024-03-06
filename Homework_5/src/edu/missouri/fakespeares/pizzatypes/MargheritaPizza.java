@@ -62,8 +62,13 @@ public class MargheritaPizza extends AbstractPizza
 	@Override
 	public double updatePizzaPrice()
 	{
-		// TODO
-		
-		return 0.0;
+		// Calculate the price uncooked
+		double uncookedPrice = this.addTopingsToPrice(this.priceWithoutToppings);
+
+		// Add the cooking price to the uncooked price
+		this.totalPrice = uncookedPrice + this.cookingPrice;
+
+		// Return the new total price
+		return this.totalPrice;
 	}
 }
