@@ -24,6 +24,7 @@ public class ConventionalOvenCookingStrategy implements ICookingStrategy
 	@Override
 	public double getAdditionalPrice()
 	{
+		// Return price for a conventional oven
 		return CookingStyleType.CONVENTIONAL_OVEN.getAdditionalPrice();
 	}
 }

@@ -24,6 +24,7 @@ public class BrickOvenCookingStrategy implements ICookingStrategy
 	@Override
 	public double getAdditionalPrice()
 	{
+		// Return price for a brick oven
 		return CookingStyleType.BRICK_OVEN.getAdditionalPrice();
 	}
 }

@@ -24,6 +24,7 @@ public class MicrowaveCookingStrategy implements ICookingStrategy
 	@Override
 	public double getAdditionalPrice()
 	{
+		// Return price for a microwave oven
 		return CookingStyleType.MICROWAVE.getAdditionalPrice();
 	}
 }

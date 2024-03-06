@@ -25,6 +25,7 @@ public enum CookingStyleType
 	private CookingStyleType(ICookingStrategy strategy, 
 							 double additionalPrice)
 	{
+		// Set fields
 		this.strategy = strategy;
 		this.additionalPrice = additionalPrice;
 	}
@@ -36,6 +37,7 @@ public enum CookingStyleType
 	 */
 	public ICookingStrategy getStrategyClass()
 	{
+		// Return strategy
 		return this.strategy;
 	}
 	
@@ -46,6 +48,7 @@ public enum CookingStyleType
 	 */
 	public double getAdditionalPrice()
 	{
+		// Return price
 		return this.additionalPrice;
 	}
 }
