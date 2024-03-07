@@ -24,6 +24,7 @@ public enum Toppings
 	 */
 	private Toppings(double price)
 	{
+		// Set the price based off of arguments
 		this.price = price;
 	}
 	
@@ -34,6 +35,7 @@ public enum Toppings
 	 */
 	public double getPrice()
 	{
+		// Return price
 		return this.price;
 	}
 }

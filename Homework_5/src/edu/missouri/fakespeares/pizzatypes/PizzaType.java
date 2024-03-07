@@ -60,6 +60,7 @@ public enum PizzaType
 			Supplier<AbstractPizza> supplier, 
 			List<Toppings> defaultToppings)
 	{
+		// Update fields with constructor
 		this.priceWithoutToppings = priceWithoutToppings;
 		this.supplier = supplier;
 		this.defaultToppings = defaultToppings;
@@ -72,6 +73,7 @@ public enum PizzaType
 	 */
 	public AbstractPizza createPizza()
 	{
+		// Use the supplier to return a new pizza object
 		return supplier.get();
 	}
 	
@@ -82,6 +84,7 @@ public enum PizzaType
 	 */
 	public double getPriceWithoutToppings()
 	{
+		// Return price
 		return this.priceWithoutToppings;
 	}
 	
@@ -92,6 +95,7 @@ public enum PizzaType
 	 */
 	public List<Toppings> getDefaultToppings()
 	{
+		// Return list of default toppings
 		return this.defaultToppings;
 	}
 }

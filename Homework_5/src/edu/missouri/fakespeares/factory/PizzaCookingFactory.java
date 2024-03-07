@@ -17,6 +17,7 @@ public class PizzaCookingFactory
 	 */
 	public AbstractPizza createPizza(PizzaType pizzaType)
 	{
+		// Use the PizzaType method that creates a pizza 
 		return pizzaType.createPizza();
 	}
 }
